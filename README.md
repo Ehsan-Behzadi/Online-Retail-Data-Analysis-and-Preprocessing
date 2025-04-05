@@ -67,6 +67,15 @@ pip install pandas numpy scipy
    - **Filter Out Unnecessary Data**: Removed irrelevant data points to streamline analysis.  
    - **Detecting Outliers (Noise)**: Identified and dealt with outliers in the dataset.  
 
+4. **Exploratory Data Analysis (EDA)**:
+
+Initial EDA steps have been completed, focusing on understanding the data structure and uncovering early insights. The following tasks were performed:
+   - **Visualized Data Distributions**: Analyzed numerical and categorical features using histograms, boxplots, and barplots.
+   - **Explored Relationships Between Variables**: Used scatter plots, correlation matrices, and grouped bar charts, boxplots and heatmaps to explore inter-variable relationships.
+   - **Performed Trend Analysis**: Created time series plots to examine trends over time based on key metrics such as quantity and sales (grouped by month and week).
+
+These visualizations provide a foundation for deeper analysis and pattern recognition in future phases.
+
 ## Project Continuation  
 
 The following steps will be implemented in the continuation of this project:  
