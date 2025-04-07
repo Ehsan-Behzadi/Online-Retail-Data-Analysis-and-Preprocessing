@@ -76,12 +76,29 @@ Initial EDA steps have been completed, focusing on understanding the data struct
 
 These visualizations provide a foundation for deeper analysis and pattern recognition in future phases.
 
+### complete EDA
+
+This part of the update, called "complete EDA" focuses on time-based and seasonal exploratory data analysis to understand customer behavior, sales performance, and the effect of calendar dynamics on sales trends. The completed steps are:
+
+   - **Cohort Analysis**:    
+      1. Identified customer behaviors over time by grouping them into cohorts based on their first purchase month.
+      2. Generated a retention heatmap to visualize customer engagement across different times.
+   - **Time-Based Heatmap**:
+      1. Interaction heatmap: When customers engaged most often.
+      2. Sales heatmap: When the highest sales amounts occurred.
+      3. Quantity heatmap: When the most products were sold.
+   - **Seasonal & Holiday Trends Analysis**:
+      1. Tracked seasonal sales patterns to identify high-performing periods.
+      2. Evaluated customer activity trends across different seasons.
+      3. Compared sales between weekdays and weekends.
+      4. Visualized sales distribution differences between weekdays and weekends using boxplots.
+      5. Assessed the effect of holidays on sales (including Black Friday, etc.).
+
 ## Project Continuation  
 
 The following steps will be implemented in the continuation of this project:  
 
-- Feature Engineering  
-- Exploratory Data Analysis (EDA)  
+- Feature Engineering    
 - Segmentation and Clustering  
 - Machine Learning Models  
 - Visualization and Reporting  
