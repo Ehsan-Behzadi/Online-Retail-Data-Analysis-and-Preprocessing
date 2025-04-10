@@ -94,11 +94,34 @@ This part of the update, called "complete EDA" focuses on time-based and seasona
       4. Visualized sales distribution differences between weekdays and weekends using boxplots.
       5. Assessed the effect of holidays on sales (including Black Friday, etc.).
 
+5. **Feature Engineering Phase**:
+
+This recent update contains the **Feature Engineering** phase for the Retail Online Dataset. It focuses on transforming raw data into meaningful features that can improve model performance and support further analysis. The following steps are performed in this phase:
+
+   - New Feature Creation:
+      1. Total Price Calculation
+      2. Customer Behavior Analysis
+      3. Product Popularity Analysis
+      4. Time-Based Analysis
+      5. Location-Based Features
+      6. Lag Features
+   - Feature Encoding:
+      1. One-hot Encoding:
+      #### It is a technique used to convert categorical variables into a numerical format that can be provided to machine learning algorithms. This method creates binary (0 or 1) columns for each category in the original variable.
+
+      #### How It Works:
+      - For each unique category in a categorical feature, a new binary column is created.
+      - A value of `1` is assigned to the column corresponding to the category for a given observation, while `0` is assigned to all other columns.
+
+   - Feature Scaling:
+      1. Standard Scaling 
+
+This phase prepared a clean, enriched, and machine-learning-ready dataset to be used in the next modeling steps.  
+
 ## Project Continuation  
 
 The following steps will be implemented in the continuation of this project:  
-
-- Feature Engineering    
+  
 - Segmentation and Clustering  
 - Machine Learning Models  
 - Visualization and Reporting  
