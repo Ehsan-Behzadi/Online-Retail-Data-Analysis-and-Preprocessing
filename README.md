@@ -118,12 +118,100 @@ This recent update contains the **Feature Engineering** phase for the Retail Onl
 
 This phase prepared a clean, enriched, and machine-learning-ready dataset to be used in the next modeling steps.  
 
+6. **Segmentation & Clustering**:
+
+This part of the project focuses on segmenting customers based on their purchasing behavior using RFM (Recency, Frequency, Monetary) metrics. Here's a summary of the main steps:
+
+   - **RFM Feature Engineering**  
+      - Calculated `Recency`, `Frequency`, and `Monetary` values for each customer.
+
+   - **Rule-Based Segmentation**  
+      - Customers labeled using simple logic rules based on RFM thresholds.
+      
+   - **Exploratory Segment Analysis**
+      - Performed exploratory segment analysis for customer segmentation and created various plots to visualize the distinct segments identified.
+
+   - **K-Means Clustering**  
+      - Applied `K-Means` clustering algorithm and determined the optimal number of clusters using **WCSS**.
+      - The **Elbow Method** and **Silhouette Score** was used to choose the *optimal k*.
+      - Segmented customers into *2 groups*.
+      - Performed Cluster Analysis & Visualization
+
+7. **Machine Learning Models**:
+
+In this section, the `Linear Regression Model` was used to predict the *Monetary* value of customers based on encoded behavioral features.
+
+#### These steps were performed:
+
+- **Regression Assumption Checks:**
+   - *Normality* Test: Checked with *Anderson-Darling*.
+   - *Multicollinearity* Check: Verified with *VIF*.
+   - Feature Relationship.
+- **Data Preparation for Linear Regression Modeling:**
+   - *Box-Cox Transformation*.
+   - Outlier Detection.
+   - One-Hot Encode.
+   - Final Dataset Construction.
+   - Split the Dataset.
+- **Building and Evaluating the Linear Regression Model:**
+   - Used Linear Regression.
+   - Evaluated with metrics: `R²`, `MAE`, `MSE`, `Max Error`.
+- **Feature Importance via Coefficients:**
+   - Extracted top predictors influencing the model output.
+- **Model Adequacy Checks:**
+   - Normality of residuals: Histogram, *Q-Q plot*, Anderson-Darling Test.
+   - Linearity Check: Scatter plot.
+   - *Homoscedasticity*: Residuals vs Fitted plot.
+   - Independence of Residuals: *Durbin-Watson test* + *ACF plot*.
+   - *Model Generalization Check* (Overfitting / Underfitting): Compared training vs test scores and residual patterns.
+   - *Overall Model Significance*: Assessed via `F-test` (*ANOVA-style summary*).
+
+### OLS Regression Summary
+
+#### Model Overview
+
+- **R-squared:** 0.675  
+  → The model explains approximately 67.5% of the variance in the target variable `Monetary_BoxCox`.
+
+- **Adjusted R-squared:** 0.674  
+  → Indicates a good balance between model complexity and performance.
+
+- **F-statistic:** 2367 | **Prob (F-statistic):** 0.000  
+  → The overall model is statistically significant.
+
+#### Coefficients Interpretation
+
+| Feature            | Coefficient | P-value | Interpretation                            |
+|--------------------|-------------|---------|--------------------------------------------|
+| `const`            | 4.5617      | 0.000   | Intercept; base value of the prediction.   |
+| `Recency_BoxCox`   | 0.0018      | 0.611   | Not statistically significant             |
+| `Frequency_BoxCox` | 0.7867      | 0.000   | Strong positive effect on `Monetary`      |
+| `cluster_1`        | 0.4600      | 0.000   | Belonging to cluster 1 increases spending  |
+
+
+#### Assumption Checks
+
+| Test               | Value     | Interpretation                                      |
+|--------------------|-----------|------------------------------------------------------|
+| **Durbin-Watson**  | 2.026     | Residuals are independent (ideal: ~2.0)             |
+| **Omnibus**        | 65.555    | Some deviation from normality, but acceptable        |
+| **Jarque-Bera**    | 122.668   | Skewness: 0.111 | Kurtosis: 3.900 – Nearly normal          |
+| **Condition No.**  | 28.3      | No signs of multicollinearity (well below 30)      |
+
+
+#### Final Summary
+
+> The linear regression model is statistically significant and well-behaved.  
+> `Frequency_BoxCox` and `Cluster_1` are the key drivers of the target variable.  
+> Residuals show independence and approximate normality.  
+> The model is stable and interpretable.
+
+
 ## Project Continuation  
 
 The following steps will be implemented in the continuation of this project:  
   
-- Segmentation and Clustering  
-- Machine Learning Models  
+- Improving the Model    
 - Visualization and Reporting  
 
 ## How to Use
